@@ -1,16 +1,9 @@
 #include "TClasses.h"
 
-TString TObject::ClassName()
-{
-    return Owner().ClassName();
-}
-
 TObject::TObject()
 {
-    if (Owner->ClassName().value == "TObject")
+    if (Owner().ClassName() == TString("TObject"))
     return;
     
-    Sender->RegisterClass(this);
-//    Classes[&typeid(TObject)] = "TObject";
-//    cout << Classes[&typeid(TObject)] << "\n";
+    TClass::RegisterClass(Sender());
 }

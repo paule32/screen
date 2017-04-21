@@ -5,24 +5,31 @@ static std::map<const type_info*, std::string> ClassTable;
 
 TClass::TClass() { }
 
-bool TClass::RegisterClass(type_info *t, TString name) {
+bool TClass::RegisterClass(type_info *t, TString _name) {
     if (name == "TObject")
     return;
     
     ClassTable[&typeid(t)] = t.name();
-    value = name;
+    name = _name;
     
     cout << ClassTable[&typeid(t)] << "  :  " << value.value << "\n";
 }
 
 bool TClass::RegisterClass(type_info *t) {
     TString s = typeid(t).name();
-    if (s == "TObject")  return ;
+    if (s == "TObject")  return true;
     
     RegisterClass(t,s);
+    return true;
+}
+
+bool TClass::RegisterClass(class TClass _Sender)
+{
+    RegisterClass(_Sender,typeid(_Sender).name();
+    return true;
 }
 
 TString TClass::ClassName()
 {
-    return this->value();
+    return name;
 }

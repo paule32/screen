@@ -18,6 +18,7 @@ public:
 
     TString & operator =  (TString &rhs);
     bool      operator == (TString &rhs);
+    bool      operator == (TString     );
     
     bool isEmpty();
     

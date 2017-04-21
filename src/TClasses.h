@@ -9,20 +9,29 @@
 #include <vector>
 #include <map>
 
-#ifndef TOBJECT_H_
-#include "TObject.h"
-#endif
-
-#include "TString.h"
+using namespace std;
+class TString;
 
 class TClass {
 public:
     explicit TClass();
     
-    bool RegisterClass(std::type_info *t,TString name);
+    bool RegisterClass(std::type_info *t,TString _name);
     bool RegisterClass(std::type_info *t);
+    bool RegisterClass(class TClass _Sender);
     
     TString ClassName();
+    
+private:
+    std::string name;
 };
+
+#ifndef TOBJECT_H_
+#include "TObject.h"
+#endif
+
+#ifndef TSTRING_H_
+#include "TString.h"
+#endif
 
 #endif

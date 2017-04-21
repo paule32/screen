@@ -46,6 +46,11 @@ bool TString::operator == (TString &rhs)
     return false;
 }
 
+bool TString::operator == (TString rhs)
+{
+    return value == rhs.value;
+}
+
 bool TString::isEmpty()
 {
     if (value.size() < 1)
