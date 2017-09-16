@@ -1,10 +1,7 @@
 #ifndef TSTRING_H_
 #define TSTRING_H_
 
-class TObject;
-#include <TObject.h>
-
-class TString: public TObject
+class TString
 {
     friend std::ostream& operator << (std::ostream &out, class TString obj);
     friend std::istream& operator >> (std::istream &out, class TString obj);
@@ -15,6 +12,8 @@ public:
     explicit TString(char*);
     explicit TString(void);
 
+    class TString & operator =  (class TString &rhs);
+    bool            operator == (class TString &rhs);
     
     bool isEmpty();
     
