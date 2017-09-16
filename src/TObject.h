@@ -1,6 +1,9 @@
 #ifndef TOBJECT_H_
 #define TOBJECT_H_
 
+class TClass;
+#include <TClasses.h>
+
 class TObject: public TClass
 {
     friend std::ostream& operator << (std::ostream &out, TObject &obj);

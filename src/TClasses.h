@@ -1,6 +1,8 @@
 #ifndef TCLASSES_H_
 #define TCLASSES_H_
 
+#include <TString.h>
+
 class TClass {
 public:
     explicit TClass();

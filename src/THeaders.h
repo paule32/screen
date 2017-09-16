@@ -9,9 +9,12 @@
 #include <vector>
 #include <map>
 
+class TString;
+class TClass;
+
+#include <TObject.h>
 #include <TString.h>
 #include <TClasses.h>
-#include <TObject.h>
 #include <TDesktop.h>
 #include <TApplication.h>
 
