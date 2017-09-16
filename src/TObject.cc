@@ -1,9 +1,9 @@
-#include "TClasses.h"
+#include <THeaders.h>
 
 TObject::TObject()
 {
-    if (Owner().ClassName() == TString("TObject"))
+    if (Owner.ClassName == TString("TObject"))
     return;
     
-    TClass::RegisterClass(Sender());
+    TClass::RegisterClass(Sender);
 }

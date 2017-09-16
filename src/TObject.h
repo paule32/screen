@@ -1,8 +1,6 @@
 #ifndef TOBJECT_H_
 #define TOBJECT_H_
 
-#include "TClasses.h"
-
 class TObject: public TClass
 {
     friend std::ostream& operator << (std::ostream &out, TObject &obj);
@@ -10,8 +8,8 @@ class TObject: public TClass
     
 public:
     explicit TObject();
-    class TClass Owner();
-    class TClass Sender();
+    class TClass Owner;
+    class TClass Sender;
 };
 
 #endif

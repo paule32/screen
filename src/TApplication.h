@@ -1,9 +1,7 @@
 #ifndef TAPPLICATION_H_
 #define TAPPLICATION_H_
 
-#include "TObject.h"
-#include "TDesktop.h"
-#include "TString.h"
+#include <THeaders.h>
 
 class TApplication: public TObject
 {

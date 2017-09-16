@@ -1,4 +1,4 @@
-#include "TDesktop.h"
+#include <THeaders.h>
 
 TDesktop::TDesktop()
 {
@@ -10,7 +10,7 @@ TDesktop::~TDesktop()
 }
 
 // TDesktop stream ... 
-std::ostream & operator << (std::ostream &out, TDesktop &obj)
+std::ostream & operator << (std::ostream &out, class TDesktop &obj)
 {
     //obj.ident += "  ";
     
@@ -19,7 +19,7 @@ std::ostream & operator << (std::ostream &out, TDesktop &obj)
     //    << "{" << std::endl ;
     return out;
 }
-std::istream & operator >> (std::istream &in, TDesktop &obj)
+std::istream & operator >> (std::istream &in, class TDesktop &obj)
 {
     //in >> obj.ClassName;    
     return in;

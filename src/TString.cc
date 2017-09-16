@@ -1,4 +1,4 @@
-#include "TString.h"
+#include <THeaders.h>
 
 // TString stream:
 std::ostream& operator << (std::ostream &out, TString obj)
