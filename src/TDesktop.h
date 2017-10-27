@@ -1,13 +1,13 @@
 #ifndef TDESKTOP_H_
 #define TDESKTOP_H_
 
-class TDesktop: public TObject
+class TDeskTop: public TObject
 {
-    friend std::ostream& operator << (std::ostream &out, class TDesktop &obj);
-    friend std::istream& operator >> (std::istream &out, class TDesktop &obj);
+protected:
+    virtual void draw();
     
 public:
-    explicit TDesktop();
-    ~TDesktop();
+    explicit TDeskTop();
+    ~TDeskTop();
 };
 #endif

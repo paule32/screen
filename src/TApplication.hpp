@@ -11,18 +11,18 @@
  * This is an example of how to use  the TApplication class.
  * More details about this example.
  */
-class TApplication
+class TApplication: public TObject
 {
 public:
-	/
+	/** constructor for TApplication */
     explicit TApplication(void);
     
     void init(void);
     void run(void);
 
 protected:
-    TDeskTop  * deskTop;
-    //TMenuBar   menuBar;
-    //TStatusBar statusBar;
+	/** the desktop object for the application */
+    class TDeskTop  * deskTop;
+    
 };
 #endif

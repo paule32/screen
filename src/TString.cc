@@ -33,24 +33,6 @@ TString::TString(char *txt)
 }
 
 
-TString & TString::operator = (TString &rhs)
-{
-    value = rhs.value;
-    return *this;
-}
-
-bool TString::operator == (TString &rhs)
-{
-    if (value == rhs.value)
-    return true; else
-    return false;
-}
-
-bool TString::operator == (TString rhs)
-{
-    return value == rhs.value;
-}
-
 bool TString::isEmpty()
 {
     if (value.size() < 1)

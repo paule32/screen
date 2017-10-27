@@ -12,12 +12,19 @@ public:
     explicit TString(char*);
     explicit TString(void);
 
-    class TString & operator =  (class TString &rhs);
-    bool            operator == (class TString &rhs);
+    class TString & operator = (class TString &rhs) {
+        value = rhs.value;
+    }
+    class TString & operator == (class TString rhs) {
+        if (value == rhs.value)
+        isOk = true; else
+        isOk = false;
+    }
     
     bool isEmpty();
+    bool isOk;
     
-protected:
+    std::string ClassName;
     std::string value;
 };
 

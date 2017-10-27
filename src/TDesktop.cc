@@ -1,26 +1,18 @@
 #include <THeaders.h>
 
-TDesktop::TDesktop()
+namespace ros {
+TDeskTop::TDeskTop()
 {
     //this->ClassName = "TDesktop";
 }
 
-TDesktop::~TDesktop()
+TDeskTop::~TDeskTop()
 {
 }
 
-// TDesktop stream ... 
-std::ostream & operator << (std::ostream &out, class TDesktop &obj)
+void TDeskTop::draw()
 {
-    //obj.ident += "  ";
-    
-    //out << obj.ClassName;
-    //out << ":" << std::endl << obj.ident
-    //    << "{" << std::endl ;
-    return out;
+
 }
-std::istream & operator >> (std::istream &in, class TDesktop &obj)
-{
-    //in >> obj.ClassName;    
-    return in;
-}
+
+} // namespace ros
