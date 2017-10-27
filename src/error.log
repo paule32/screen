@@ -3,13 +3,26 @@ jens@rechner1 ~/winos/reactos/output-MinGW-i386/reactos $ sudo ninja bootcd
 ninja: no work to do.
 [5/13] Building CXX object boot/freeldr/freeldr/CMakeFiles/freeldr_common.dir/paule32/screen/src/TApplication.cc.obj
 FAILED: /home/jens/winos/rosbe/i386/bin/i686-w64-mingw32-g++  -DDBG=1 -DKDBG=1 -DUSE_COMPILER_EXCEPTIONS -DWINVER=0x502 -D_BLDR_ -D_M_IX86 -D_NTHAL_ -D_NTSYSTEM_ -D_SEH_ENABLE_TRACE -D_SETUPAPI_VER=0x502 -D_USE_32BIT_TIME_T -D_USE_PSEH3=1 -D_WIN32_IE=0x600 -D_WIN32_WINDOWS=0x502 -D_WIN32_WINNT=0x502 -D_X86_ -D__REACTOS__ -D__i386__ -D_inline=__inline -Di386 -pipe -fms-extensions -fno-strict-aliasing -nostdinc -mstackrealign -fno-rtti -fno-exceptions -fdebug-prefix-map="/home/jens/winos/reactos"=ReactOS -gdwarf-2 -gstrict-dwarf -femit-struct-debug-detailed=none -feliminate-unused-debug-symbols -march=pentium -mtune=i686 -Werror -Wall -Wpointer-arith -Wno-char-subscripts -Wno-multichar -Wno-unused-value -Wno-maybe-uninitialized -O1 -fno-optimize-sibling-calls -fno-omit-frame-pointer -mpreferred-stack-boundary=3 -fno-set-stack-executable -Winvalid-pch -Werror=invalid-pch -Iboot/freeldr/freeldr -I../../boot/freeldr/freeldr -I../../boot/freeldr/freeldr/include -I../../sdk/include -I../../sdk/include/psdk -I../../sdk/include/dxsdk -Isdk/include -Isdk/include/psdk -Isdk/include/dxsdk -Isdk/include/ddk -Isdk/include/reactos -Isdk/include/reactos/mc -I../../sdk/include/crt -I../../sdk/include/ddk -I../../sdk/include/ndk -I../../sdk/include/reactos -I../../sdk/include/reactos/libs -I../../boot/freeldr/freeldr/paule32/screen/src -I../../ntoskrnl/include -I../../sdk/lib/cmlib -I../../sdk/include/reactos/elf -MMD -MT boot/freeldr/freeldr/CMakeFiles/freeldr_common.dir/paule32/screen/src/TApplication.cc.obj -MF boot/freeldr/freeldr/CMakeFiles/freeldr_common.dir/paule32/screen/src/TApplication.cc.obj.d -o boot/freeldr/freeldr/CMakeFiles/freeldr_common.dir/paule32/screen/src/TApplication.cc.obj -c ../../boot/freeldr/freeldr/paule32/screen/src/TApplication.cc
-../../boot/freeldr/freeldr/paule32/screen/src/TApplication.cc:4:1: error: 'TApplication' does not name a type
-../../boot/freeldr/freeldr/paule32/screen/src/TApplication.cc:10:6: error: 'TApplication' has not been declared
-../../boot/freeldr/freeldr/paule32/screen/src/TApplication.cc:14:6: error: 'TApplication' has not been declared
+In file included from ../../boot/freeldr/freeldr/paule32/screen/src/THeaders.h:52:0,
+                 from ../../boot/freeldr/freeldr/paule32/screen/src/TObject.h:4,
+                 from ../../boot/freeldr/freeldr/paule32/screen/src/TApplication.hpp:4,
+                 from ../../boot/freeldr/freeldr/paule32/screen/src/TApplication.cc:1:
+../../boot/freeldr/freeldr/paule32/screen/src/TDesktop.hpp:9:3: error: expected class-name before '{' token
+In file included from ../../boot/freeldr/freeldr/paule32/screen/src/THeaders.h:54:0,
+                 from ../../boot/freeldr/freeldr/paule32/screen/src/TObject.h:4,
+                 from ../../boot/freeldr/freeldr/paule32/screen/src/TApplication.hpp:4,
+                 from ../../boot/freeldr/freeldr/paule32/screen/src/TApplication.cc:1:
+../../boot/freeldr/freeldr/paule32/screen/src/TMenuBar.hpp:9:3: error: expected class-name before '{' token
 [5/13] Building CXX object boot/freeldr/freeldr/CMakeFiles/freeldr_common.dir/paule32/screen/src/test.cc.obj
 FAILED: /home/jens/winos/rosbe/i386/bin/i686-w64-mingw32-g++  -DDBG=1 -DKDBG=1 -DUSE_COMPILER_EXCEPTIONS -DWINVER=0x502 -D_BLDR_ -D_M_IX86 -D_NTHAL_ -D_NTSYSTEM_ -D_SEH_ENABLE_TRACE -D_SETUPAPI_VER=0x502 -D_USE_32BIT_TIME_T -D_USE_PSEH3=1 -D_WIN32_IE=0x600 -D_WIN32_WINDOWS=0x502 -D_WIN32_WINNT=0x502 -D_X86_ -D__REACTOS__ -D__i386__ -D_inline=__inline -Di386 -pipe -fms-extensions -fno-strict-aliasing -nostdinc -mstackrealign -fno-rtti -fno-exceptions -fdebug-prefix-map="/home/jens/winos/reactos"=ReactOS -gdwarf-2 -gstrict-dwarf -femit-struct-debug-detailed=none -feliminate-unused-debug-symbols -march=pentium -mtune=i686 -Werror -Wall -Wpointer-arith -Wno-char-subscripts -Wno-multichar -Wno-unused-value -Wno-maybe-uninitialized -O1 -fno-optimize-sibling-calls -fno-omit-frame-pointer -mpreferred-stack-boundary=3 -fno-set-stack-executable -Winvalid-pch -Werror=invalid-pch -Iboot/freeldr/freeldr -I../../boot/freeldr/freeldr -I../../boot/freeldr/freeldr/include -I../../sdk/include -I../../sdk/include/psdk -I../../sdk/include/dxsdk -Isdk/include -Isdk/include/psdk -Isdk/include/dxsdk -Isdk/include/ddk -Isdk/include/reactos -Isdk/include/reactos/mc -I../../sdk/include/crt -I../../sdk/include/ddk -I../../sdk/include/ndk -I../../sdk/include/reactos -I../../sdk/include/reactos/libs -I../../boot/freeldr/freeldr/paule32/screen/src -I../../ntoskrnl/include -I../../sdk/lib/cmlib -I../../sdk/include/reactos/elf -MMD -MT boot/freeldr/freeldr/CMakeFiles/freeldr_common.dir/paule32/screen/src/test.cc.obj -MF boot/freeldr/freeldr/CMakeFiles/freeldr_common.dir/paule32/screen/src/test.cc.obj.d -o boot/freeldr/freeldr/CMakeFiles/freeldr_common.dir/paule32/screen/src/test.cc.obj -c ../../boot/freeldr/freeldr/paule32/screen/src/test.cc
-../../boot/freeldr/freeldr/paule32/screen/src/test.cc: In function 'void switch2cpp()':
-../../boot/freeldr/freeldr/paule32/screen/src/test.cc:7:26: error: expected initializer before 'app'
-../../boot/freeldr/freeldr/paule32/screen/src/test.cc:8:2: error: 'app' was not declared in this scope
+In file included from ../../boot/freeldr/freeldr/paule32/screen/src/THeaders.h:52:0,
+                 from ../../boot/freeldr/freeldr/paule32/screen/src/TObject.h:4,
+                 from ../../boot/freeldr/freeldr/paule32/screen/src/TApplication.hpp:4,
+                 from ../../boot/freeldr/freeldr/paule32/screen/src/test.cc:1:
+../../boot/freeldr/freeldr/paule32/screen/src/TDesktop.hpp:9:3: error: expected class-name before '{' token
+In file included from ../../boot/freeldr/freeldr/paule32/screen/src/THeaders.h:54:0,
+                 from ../../boot/freeldr/freeldr/paule32/screen/src/TObject.h:4,
+                 from ../../boot/freeldr/freeldr/paule32/screen/src/TApplication.hpp:4,
+                 from ../../boot/freeldr/freeldr/paule32/screen/src/test.cc:1:
+../../boot/freeldr/freeldr/paule32/screen/src/TMenuBar.hpp:9:3: error: expected class-name before '{' token
 ninja: build stopped: subcommand failed.
-jens@rechner1 ~/winos/reactos/output-MinGW-i386/reactos $

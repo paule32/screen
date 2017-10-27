@@ -1,9 +1,10 @@
-#include <THeaders.h>
-using namespace ros;
+#include <TApplication.hpp>
+using namespace ros::tui;
+//TApplication tapp;
 
-extern "C" void switch2cpp(void);
+extern "C"
 void switch2cpp(void)
 {
-	class ros::TApplication app;
-	app.init();
+	//taps app;
+//	taps.init();
 }

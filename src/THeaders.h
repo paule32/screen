@@ -49,7 +49,6 @@ namespace ros {
 #include <string.hpp>
 
 #include <TObject.h>
-#include <TClasses.h>
 #include <TDesktop.hpp>
 #include <TApplication.hpp>
 #include <TMenuBar.hpp>

@@ -1,17 +1,19 @@
 #ifndef TMENUBAR_H_
 #define TMENUBAR_H_
 
-#include <THeaders.h>
+#include <TObject.h>
 
 namespace ros {
-class TMenuBar: public TObject
-{
-public:
-	explicit TMenuBar();
-	~TMenuBar();
+	namespace tui {
+		class TMenuBar: public TObject
+		{
+		public:
+			explicit TMenuBar();
+			~TMenuBar();
 
-protected:
-	virtual void draw();
-};
-}
+		protected:
+			//virtual void draw();
+		};
+	}	// namespace tui
+}		// namespace ros
 #endif
