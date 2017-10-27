@@ -1,8 +1,9 @@
 #include <THeaders.h>
 using namespace ros;
 
-extern "C" void switch2cpp(void)
+extern "C" void switch2cpp(void);
+void switch2cpp(void)
 {
-	TApplication app;
+	class ros::TApplication app;
 	app.init();
 }

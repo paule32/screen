@@ -1,6 +1,7 @@
 #ifndef TDESKTOP_H_
 #define TDESKTOP_H_
 
+namespace ros {
 class TDeskTop: public TObject
 {
 protected:
@@ -10,4 +11,5 @@ public:
     explicit TDeskTop();
     ~TDeskTop();
 };
+} // namespace ros
 #endif

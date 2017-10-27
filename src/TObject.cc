@@ -1,6 +1,9 @@
 #include <THeaders.h>
 
-TObject::TObject()
+namespace ros {
+TObject::TObject(void)
 {
+
+}
 
 }

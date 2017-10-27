@@ -1,33 +1,17 @@
 #ifndef ROS_string_H_
 #define ROS_string_H_
 
+#include <THeaders.h>
+
+#ifdef __cplusplus
 extern "C" {
+#endif
 /** copy source string @src to destination string @dst */
 extern char *strcpy(char*dst,char*src);
 /** returns the length of string str */
 extern int strlen(char* str);
+#ifdef __cplusplus
 };
-
-/**
- * \namespace ros
- * ReactOS STL namespace<br>
- * It is a small implementation of the standard template library
- * provided by huge compiler system's.
- * 
- * Please don't cry - not all STL elements are ported over for
- * ReactOS.
- * 
- * The idea was, to simply have fast running, and stable Windows
- * operation system.
- */
-namespace ros {
-/*! \mainpage ReactOS fork \@paule32 (c) 2017
- *	\section intro_sec Introduction
- *	
- *	Introduction
- *	The ReactOS Project aim's to be a Free Windows compatible OS.
- *	You can support the Project by donatation.
- */
 
 /** Extended string class */
 class string
@@ -49,6 +33,5 @@ public:
 private:
 	char *the_string;
 };
-
-} // namespace
-#endif
+#endif // __cplusplus
+#endif // header

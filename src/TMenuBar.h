@@ -3,6 +3,7 @@
 
 #include <THeaders.h>
 
+namespace ros {
 class TMenuBar: public TObject
 {
 public:
@@ -11,5 +12,6 @@ public:
 
 protected:
 	virtual void draw();
+};
 }
 #endif

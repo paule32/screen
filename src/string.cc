@@ -17,4 +17,5 @@ string& string::operator = (const string &str)
 	strcpy(the_string,str.the_string);
 	return *this;
 }
-}  // namespace
+
+}

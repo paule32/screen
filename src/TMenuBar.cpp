@@ -1,5 +1,6 @@
-#include "TApplication.h"
+#include <THeaders.hpp>
 
+namespace ros {
 TMenuBar::TMenuBar(void)
 {
 	ClassName = "TApplication";
@@ -13,3 +14,4 @@ void TMenuBar::init(void)
 void TMenuBar::run(void)
 {
 }
+} // namespace ros
