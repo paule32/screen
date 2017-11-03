@@ -1,9 +1,11 @@
 #ifndef TOBJECT_H_
 #define TOBJECT_H_
 
-#include <THeaders.h>
+#include <string.hpp>
 
 namespace ros {
+class string;
+
 class TObject
 {
 //    friend std::ostream& operator << (std::ostream &out, TObject &obj);
@@ -14,7 +16,7 @@ public:
     //class TClass Owner;
     //class TClass Sender;
 
-    class string ClassName;
+    class TString ClassName;
 };
 }  // namespace ros
 #endif

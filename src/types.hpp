@@ -11,4 +11,11 @@ typedef unsigned long long uint64_t;
 #define NULL 0
 #endif
 
-#endif
+#ifdef __cplusplus
+extern "C" {
+
+extern void * malloc(size_t);
+extern void * memcpy(void*,void*,size_t);
+};
+#endif  // __cplusplus
+#endif	// header
