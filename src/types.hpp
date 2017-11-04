@@ -16,6 +16,16 @@ extern "C" {
 
 extern void * malloc(size_t);
 extern void * memcpy(void*,void*,size_t);
+extern void   memset(void*,void*,size_t);
+
+extern void initPS2(void);
+extern void mouse_handler(void);
+
+extern short int _mouse_x;
+extern short int _mouse_y;
+
+extern char buttons; 
+
 };
 #endif  // __cplusplus
 #endif	// header

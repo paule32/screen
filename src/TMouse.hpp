@@ -16,14 +16,19 @@ namespace ros {
 		namespace crt {
 			class TMouse {
 			public:
-				explicit TMouse();
+				TMouse();
 				~TMouse();
-				
+
+				void handleEvent(void);
+
 				void init(void);
 				void draw(void);
 
-				class TEvent * event;
-				class TVideo * video;
+				TVideo * video;
+
+				unsigned char button;
+				short int     new_xpos, old_xpos, px;
+				short int     new_ypos, old_ypos, py;
 			};
 		}
 	}

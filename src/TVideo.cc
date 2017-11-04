@@ -6,11 +6,9 @@
 
 #include <pc.h>
 
-extern "C" void * malloc(size_t);
-extern "C" void * memset(void*,void*,size_t);
-extern "C" void * memcpy(void*,void*,size_t);
 namespace ros {
 	namespace tui {
+		extern unsigned short * VideoMem;
 		namespace crt
 		{
 			extern unsigned short offscr[];
@@ -28,7 +26,8 @@ namespace ros {
 			}
 			void TVideo::draw(void)
 			{
-				memcpy(VideoMem,buffer,80*25*2*2);
+				//memcpy(VideoMem,buffer,80*25*2*2);
+				memcpy(buffer,offscr,80*25*2*2);
 			}
 
 			void TVideo::clrscr(void)

@@ -2,23 +2,15 @@
 #define _TEVENT_H__
 
 #include <TMouse.hpp>
+#include <TVideo.hpp>
 
 namespace ros {
 	namespace tui {
 		namespace crt {
-			struct TEventMouse {
-				unsigned char button;
-				short int     posX;
-				short int     posY;
-			};
 			class TEvent {
 			public:
 				TEvent();
 				~TEvent();
-
-				class TEvent * exec(class TMouse*);
-
-				TEventMouse mouse;
 			};
 		}
 	}

@@ -6,6 +6,7 @@
 #include <TDesktop.hpp>
 #include <TMenuBar.hpp>
 #include <TStatusBar.hpp>
+#include <TEvent.hpp>
 
 namespace ros {
 	namespace tui {
@@ -22,7 +23,7 @@ namespace ros {
 			{
 			public:
 				/** constructor for TApplication */
-				TApplication(void);
+				explicit TApplication(void);
 			    
 			    void init(void);
 			    void exec(void);
@@ -35,6 +36,8 @@ namespace ros {
 
 			    class TVideo * video;
 			    class TMouse * mouse;
+
+			    void handleEvent(void);
 			};
 		}	// namespace ros::tui::crt
 	}		// namespace ros::tui
