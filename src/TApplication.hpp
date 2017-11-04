@@ -7,6 +7,7 @@
 #include <TMenuBar.hpp>
 #include <TStatusBar.hpp>
 #include <TEvent.hpp>
+#include <TWindow.hpp>
 
 namespace ros {
 	namespace tui {

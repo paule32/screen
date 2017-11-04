@@ -2,6 +2,7 @@
 #include <TMouse.hpp>
 #include <TVideo.hpp>
 #include <TEvent.hpp>
+#include <TWindow.hpp>
 
 extern "C" void initPS2(void);
 namespace ros {
@@ -9,6 +10,8 @@ namespace ros {
 		namespace crt {
 			extern unsigned short offscr[];
 			extern unsigned short * VideoMem;
+			extern class TWindow ** windows;
+			extern int TWindowHWND;
 			TMouse::TMouse()
 			{
 				old_xpos = 0;  // old values
@@ -31,27 +34,31 @@ namespace ros {
 				memcpy(VideoMem,video->buffer,80*25*2*2);
     			mouse_handler();
 
-    			memcpy(video->buffer,offscr,80*25*2*2);
+    			// save mouse position
+    			int tx = _mouse_x;
+    			int ty = _mouse_y;
+    			unsigned short svc = VideoMem[(80*ty)+tx];
 
-				video->setColor(14);
-		        video->setCursorAtPos(33,10);
-		        video->setString((char*)"->>> X:%d, Y:%d       ",_mouse_x, _mouse_y);
-    			
-    			video->setCursorAtPos(33,11);
-				switch (buttons) {
-		        case 0:  video->setString((char*)"no button pressd             ");
-		                 break;
-		        case 1:  video->setString((char*)"button >%d<: pressed links   ",buttons);
-		                 break;
-		        case 2:  video->setString((char*)"button >%d<: pressed rechts  ",buttons);
-		                 break;
-		        case 3:  video->setString((char*)"button >%d<: pressed mitte   ",buttons);
-		                 break;
-		        case 4:  video->setString((char*)"button >%d<: test case       ",buttons);
-		                 break;
-		        default: video->setString((char*)"button >%d<: not pressed     ",buttons);
-		                 break;
-		        }
+    			// draw window's ...
+    			memcpy(video->buffer,offscr,80*25*2*2);
+    			windows[TWindowHWND-1]->handleEvent(video);
+
+    			// restore mouse position
+    			_mouse_x = tx;
+    			_mouse_y = ty;
+    			VideoMem[(80*ty)+tx] = svc;
+
+    			if (buttons > 0)
+    			{
+    				for (int wid=0;wid<1;wid++)
+    				{
+   						windows[wid]->move(_mouse_x,_mouse_y);
+
+   						video->setColor(14);
+				        video->setCursorAtPos(33,10);
+				        video->setString((char*)"->>> X:%d, Y:%d       ",_mouse_x, _mouse_y);
+    				}
+    			}
 
 		        if (old_xpos > 79) { old_xpos = 79; } else
 		        if (old_xpos <= 0) { old_xpos =  0; }
