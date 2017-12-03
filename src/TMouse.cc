@@ -51,50 +51,13 @@ namespace ros {
     				//for (int wid=0;wid<1;wid++)
     				{
                         memcpy(offscr,bupScreen,80*25*2*2);
-   						windows[0]->move(_mouse_x,_mouse_y);
+   						windows[0]->move(_mouse_x,_mouse_y);  // <-- als Hilfe: die box soll verschoben werden
    						
    						memcpy(offscr,windows[0]->video->buffer,80*25*2*2);
                         offscr[(80*_mouse_y)+_mouse_x] = 0xe102;
                     }
+                }
 			}
-			TMouse::~TMouse() {
-				delete video;
-			}
-
-			void TMouse::handleEvent(void)
-			{
-				memcpy(VideoMem,video->buffer,80*25*2*2);
-    			mouse_handler();
-
-    			// save mouse position
-    			int tx = _mouse_x;
-    			int ty = _mouse_y;
-    			unsigned short svc = VideoMem[(80*ty)+tx];
-
-    			// draw window's ...
-    			memcpy(video->buffer,offscr,80*25*2*2);
-    			windows[TWindowHWND-1]->handleEvent(video);
-
-    			// restore mouse position
-    			_mouse_x = tx;
-    			_mouse_y = ty;
-    			VideoMem[(80*ty)+tx] = svc;
-
-    			if (buttons > 0)
-    			{
-    				for (int wid=0;wid<1;wid++)
-    				{
-   						windows[wid]->move(_mouse_x,_mouse_y);
-
-   						video->setColor(14);
-				        video->setCursorAtPos(33,10);
-				        video->setString((char*)"->>> X:%d, Y:%d       ",_mouse_x, _mouse_y);
-
-                        memcpy(bup,video->buffer,80*25*2*2);
-                        memcpy(bup,offscr,80*25*2*2);
-    				}
-    			}
-   			}
 
 			void TMouse::init(void)
 			{
