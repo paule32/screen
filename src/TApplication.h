@@ -14,15 +14,13 @@
 class TApplication
 {
 public:
-	/
     explicit TApplication(void);
     
-    void init(void);
-    void run(void);
+    void init();
+    void run();
 
 protected:
     TDeskTop  * deskTop;
-    //TMenuBar   menuBar;
-    //TStatusBar statusBar;
+    TVideo    * video;
 };
 #endif

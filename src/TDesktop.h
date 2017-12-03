@@ -8,8 +8,10 @@ protected:
     virtual void draw();
     
 public:
-    explicit TDeskTop();
+    explicit TDeskTop(TVideo *_video);
     ~TDeskTop();
+    
+    TVideo *video;
 };
 } // namespace ros
 #endif

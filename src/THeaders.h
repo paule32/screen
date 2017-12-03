@@ -46,7 +46,7 @@ extern void operator delete( void * ptr );
  */
 namespace ros {
 #include <new.hpp>
-#include <string.hpp>
+//#include <string.hpp>
 
 #include <TObject.h>
 #include <TDesktop.hpp>

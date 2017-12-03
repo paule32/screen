@@ -1,7 +1,7 @@
 #ifndef ROS_string_H_
 #define ROS_string_H_
 
-#include <THeaders.h>
+//#include <THeaders.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -12,26 +12,36 @@ extern char *strcpy(char*dst,char*src);
 extern int strlen(char* str);
 #ifdef __cplusplus
 };
-
+namespace ros {
 /** Extended string class */
-class string
+class TString
 {
 public:
 	/** Plain string constructor that
 	 * constructs empty string object
 	 */
-	explicit string(void);
-	explicit string(const string&);
+	TString(void);
+	TString(char*);
+	//TString(const char*);
+	TString(const ros::TString&);
+	TString(      ros::TString&);
 
 	/** Destructor: destroy any string object */
-	~string();
+	~TString();
 
 	/** assings string to class object */
-	string& operator = (const char*);
-	string& operator = (const string&);
+	TString& operator = (char*);
 
-private:
+	TString& operator = (TString);
+	TString& operator = (TString&);
+
+	char* center(void);
+
+	void setText(char *);
+
+	char *c_str(void);
 	char *the_string;
 };
+}      // namespace ros
 #endif // __cplusplus
 #endif // header
