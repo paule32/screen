@@ -8,7 +8,6 @@ namespace ros {
 		namespace crt {
 			extern unsigned short offscr[];
 			extern unsigned short * VideoMem;
-<<<<<<< HEAD
 			extern unsigned short bupScreen[];
 			extern unsigned short bup[];
 			class TWindow **windows;
@@ -20,14 +19,6 @@ namespace ros {
 			TWindow::TWindow(TVideo *_video, class TRect *r)
 			{
 				video = _video;
-=======
-			class TWindow **windows;
-			int TWindowHWND = 0;
-			TWindow::TWindow() { }
-			TWindow::TWindow(class TRect *r)
-			{
-				video = new TVideo;
->>>>>>> 31ea98d2452f2959f37d947255dda72fc20e9290
 				rect  = new TRect;
 
 				rect = r;
@@ -38,15 +29,9 @@ namespace ros {
 
 				windows[TWindowHWND++] = this;
 			}
-<<<<<<< HEAD
 			TWindow::TWindow(TVideo *_video, class TRect &r)
 			{
 				video = _video;
-=======
-			TWindow::TWindow(class TRect &r)
-			{
-				video = new TVideo;
->>>>>>> 31ea98d2452f2959f37d947255dda72fc20e9290
 				rect  = new TRect;
 
 				rect->x = r.x;
@@ -120,7 +105,6 @@ namespace ros {
 				}
 			}
 
-<<<<<<< HEAD
 			void TWindow::handleEvent()
 			{
 				draw();
@@ -129,14 +113,3 @@ namespace ros {
 		}	// namespace ros::tui::crt
 	}		// namespace ros::tui
 }			// namespace ros
-=======
-			void TWindow::handleEvent(class TVideo * video)
-			{
-				draw();
-				//video->buffer[(80*5)+5] = 0x0f05;
-				//memcpy(VideoMem,video->buffer,80*25*2*2);
-			}
-		}	// namespace ros::tui::crt
-	}		// namespace ros::tui
-}			// namespace ros
->>>>>>> 31ea98d2452f2959f37d947255dda72fc20e9290

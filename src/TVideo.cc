@@ -26,13 +26,8 @@ namespace ros {
 			}
 			void TVideo::draw(void)
 			{
-<<<<<<< HEAD
         		//memcpy(VideoMem,buffer,80*25*2*2);
 			    memcpy(buffer,offscr,80*25*2*2);
-=======
-				//memcpy(VideoMem,buffer,80*25*2*2);
-				memcpy(buffer,offscr,80*25*2*2);
->>>>>>> 31ea98d2452f2959f37d947255dda72fc20e9290
 			}
 
 			void TVideo::clrscr(void)
@@ -207,8 +202,4 @@ namespace ros {
 			}
 		}	// namespace ros::tui:crt
 	}		// namespace ros::tui
-<<<<<<< HEAD
 }			// namespace ros
-=======
-}			// namespace ros
->>>>>>> 31ea98d2452f2959f37d947255dda72fc20e9290
