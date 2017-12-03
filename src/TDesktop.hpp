@@ -3,8 +3,11 @@
 
 #include <types.hpp>
 #include <TObject.h>
+<<<<<<< HEAD
 #include <TMenuBar.hpp>
 #include <TStatusBar.hpp>
+=======
+>>>>>>> 31ea98d2452f2959f37d947255dda72fc20e9290
 
 namespace ros {
 	namespace tui {
@@ -34,15 +37,22 @@ namespace ros {
 			class TDeskTop
 			{    
 			public:
+<<<<<<< HEAD
 			    explicit TDeskTop(TVideo *_video);
+=======
+			    explicit TDeskTop();
+>>>>>>> 31ea98d2452f2959f37d947255dda72fc20e9290
 			    ~TDeskTop();
 
 			    void init();
 			    void draw();
 
 			    TVideo *video;
+<<<<<<< HEAD
 			    TMenuBar *menuBar;
 			    TStatusBar *statusBar;
+=======
+>>>>>>> 31ea98d2452f2959f37d947255dda72fc20e9290
 			};
 		}	// namespace ros::tui::crt
 	}		// namespace ros::tui

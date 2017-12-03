@@ -24,7 +24,11 @@ namespace ros {
 			{
 			public:
 				/** constructor for TApplication */
+<<<<<<< HEAD
 				explicit TApplication(TVideo *_video);
+=======
+				explicit TApplication(void);
+>>>>>>> 31ea98d2452f2959f37d947255dda72fc20e9290
 			    
 			    void init(void);
 			    void exec(void);
